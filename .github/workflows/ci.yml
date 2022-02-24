@@ -34,9 +34,7 @@ jobs:
     
     - name: Install PDM
       run: |
-        python -m pip install click
-        # install head pdm
-        python install-pdm.py --version head
+        curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 - --version head
         echo "$HOME/.local/bin" >> $GITHUB_PATH
 
     - name: Set cache variables
